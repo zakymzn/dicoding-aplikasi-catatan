@@ -1,11 +1,13 @@
 import React from "react";
-import { getData } from "../utils/data";
+import NoteList from "./NoteList";
+import { getInitialData, showFormattedDate } from "../utils/data";
+import NoteInput from "./NoteInput";
 
 class NoteApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            notes: getData(),
+            notes: getInitialData(),
         }
 
         this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
@@ -21,7 +23,7 @@ class NoteApp extends React.Component {
                         id: +new Date(),
                         title,
                         body,
-                        createdAt: +new Date(),
+                        createdAt: showFormattedDate(),
                         archived,
                     }
                 ]
@@ -39,9 +41,9 @@ class NoteApp extends React.Component {
             <div className="note-app">
                 <h1>Aplikasi Catatan</h1>
                 <h2>Tambah Catatan</h2>
-                {/* Note Input */}
+                <NoteInput addNote={this.onAddNoteHandler} />
                 <h2>Daftar Catatan</h2>
-                {/* Note List */}
+                <NoteList notes={this.state.notes} onDelete={this.onDeleteNoteHandler} />
             </div>
         );
     }
