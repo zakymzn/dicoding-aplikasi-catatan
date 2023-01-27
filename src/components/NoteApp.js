@@ -2,6 +2,7 @@ import React from "react";
 import NoteList from "./NoteList";
 import { getInitialData, showFormattedDate } from "../utils/data";
 import NoteInput from "./NoteInput";
+import NavBar from "./NavBar";
 
 class NoteApp extends React.Component {
     constructor(props) {
@@ -40,10 +41,12 @@ class NoteApp extends React.Component {
         return (
             <div className="note-app">
                 <h1>Aplikasi Catatan</h1>
-                <h2>Tambah Catatan</h2>
+                <NavBar />
+                <h2 id="tambah-catatan">Tambah Catatan</h2>
                 <NoteInput addNote={this.onAddNoteHandler} />
-                <h2>Daftar Catatan</h2>
+                <h2 id="daftar-catatan">Daftar Catatan</h2>
                 <NoteList notes={this.state.notes} onDelete={this.onDeleteNoteHandler} />
+                <h2 id="arsip-catatan">Arsip Catatan</h2>
             </div>
         );
     }
