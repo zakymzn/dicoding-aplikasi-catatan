@@ -40,13 +40,17 @@ class NoteApp extends React.Component {
     render() {
         return (
             <div className="note-app">
-                <h1>Aplikasi Catatan</h1>
-                <NavBar />
-                <h2 id="tambah-catatan">Tambah Catatan</h2>
-                <NoteInput addNote={this.onAddNoteHandler} />
-                <h2 id="daftar-catatan">Daftar Catatan</h2>
-                <NoteList notes={this.state.notes} onDelete={this.onDeleteNoteHandler} />
-                <h2 id="arsip-catatan">Arsip Catatan</h2>
+                <header>
+                    <h1>Aplikasi Catatan</h1>
+                    <NavBar />
+                </header>
+                <main>
+                    <h2 id="tambah-catatan">Tambah Catatan</h2>
+                    <NoteInput addNote={this.onAddNoteHandler} />
+                    <h2 id="daftar-catatan">Daftar Catatan</h2>
+                    <NoteList notes={this.state.notes} onDelete={this.onDeleteNoteHandler} />
+                    <h2 id="arsip-catatan">Arsip Catatan</h2>
+                </main>
             </div>
         );
     }
