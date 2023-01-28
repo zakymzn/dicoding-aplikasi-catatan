@@ -6,7 +6,8 @@ class NoteInput extends React.Component {
 
         this.state = {
             title: '',
-            body: ''
+            body: '',
+            createdAt: +new Date()
         }
 
         this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);

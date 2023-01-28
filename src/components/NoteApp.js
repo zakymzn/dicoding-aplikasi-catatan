@@ -15,7 +15,7 @@ class NoteApp extends React.Component {
         this.onDeleteNoteHandler = this.onDeleteNoteHandler.bind(this);
     }
 
-    onAddNoteHandler({ title, body, archived }) {
+    onAddNoteHandler({ title, body, createdAt, archived }) {
         this.setState((prevState) => {
             return {
                 notes: [
@@ -24,7 +24,7 @@ class NoteApp extends React.Component {
                         id: +new Date(),
                         title,
                         body,
-                        createdAt: showFormattedDate(),
+                        createdAt: showFormattedDate(+new Date()),
                         archived,
                     }
                 ]
