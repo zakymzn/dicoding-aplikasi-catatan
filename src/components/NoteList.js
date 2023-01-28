@@ -4,6 +4,7 @@ import EmptyNote from "./EmptyNote";
 
 function NoteList({ notes, onDelete }) {
     if (notes.length !== 0) {
+        console.log(notes);
         return (
             <div className="note-list">
                 {

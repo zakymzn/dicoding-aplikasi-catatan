@@ -1,6 +1,6 @@
 import React from "react";
 import NoteList from "./NoteList";
-import { getInitialData, showFormattedDate } from "../utils/data";
+import { getInitialData } from "../utils/data";
 import NoteInput from "./NoteInput";
 import NavBar from "./NavBar";
 
@@ -15,7 +15,7 @@ class NoteApp extends React.Component {
         this.onDeleteNoteHandler = this.onDeleteNoteHandler.bind(this);
     }
 
-    onAddNoteHandler({ title, body, createdAt, archived }) {
+    onAddNoteHandler({ title, body }) {
         this.setState((prevState) => {
             return {
                 notes: [
@@ -24,8 +24,8 @@ class NoteApp extends React.Component {
                         id: +new Date(),
                         title,
                         body,
-                        createdAt: showFormattedDate(+new Date()),
-                        archived,
+                        createdAt: Date(),
+                        archived: false,
                     }
                 ]
             }
