@@ -10,7 +10,7 @@
 html {
     scroll-behavior: smooth;
     transition: all 500ms;
-    scroll-padding-top: 6em;
+    scroll-padding-top: 4em;
 }
 
 body {
@@ -130,26 +130,81 @@ nav a:hover {
     margin: auto;
 }
 
+.note-input button:hover {
+    background-color: darkslategrey;
+}
+
 .note-item {
     border: darkslategrey solid 3px;
     border-radius: 8px;
-    padding: 0px 16px;
+    padding: 8px 16px;
     margin: 16px;
 }
 
-.note-item__title {
+.note-item__header {
+    display: flex;
     border-bottom: darkslategrey solid 3px;
+    justify-content: space-between;
     padding-bottom: 8px;
 }
 
-.note-item__delete {
+.note-item__title {
+    margin: auto 0;
+    align-content: center;
+}
+
+.note-item__date {
     color: white;
-    background-color: red;
-    border-radius: 8px;
+}
+
+.note-item__buttons {
+    display: flex;
+    justify-content: right;
+}
+
+.note-item__delete {
+    color: red;
+    background-color: transparent;
+    border: none;
+    border-radius: 100%;
     padding: 8px 10px;
-    margin-bottom: 8px;
+    margin: 0 10px;
     text-align: center;
     cursor: pointer;
+    transition: all 250ms;
+}
+
+.note-item__delete:hover {
+    color: white;
+    background-color: red;
+}
+
+.note-item__archive {
+    color: yellow;
+    background-color: transparent;
+    border: none;
+    border-radius: 100%;
+    padding: 8px 10px;
+    margin: 0 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 250ms;
+}
+
+.note-item__archive:hover {
+    color: black;
+    background-color: yellow;
+}
+
+.empty-note span {
+    display: flex;
+    justify-content: center;
+    color: yellow;
+    font-size: xx-large;
+}
+
+.empty-note p {
+    text-align: center;
 }
 
 @media only screen and (max-width: 1028px) {
