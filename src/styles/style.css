@@ -80,6 +80,10 @@ nav a:hover {
     border-radius: 8px;
 }
 
+.note-input p {
+    margin-left: 12%;
+}
+
 .note-input input {
     font-family: sans-serif;
     display: block;
