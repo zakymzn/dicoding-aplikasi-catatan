@@ -9,12 +9,10 @@ class NoteApp extends React.Component {
         super(props);
         this.state = {
             notes: getInitialData(),
-            pureNotes: getInitialData(),
         }
 
         this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
         this.onArchiveNoteHandler = this.onArchiveNoteHandler.bind(this);
-        // this.onUnarchiveNoteHandler = this.onUnarchiveNoteHandler.bind(this);
         this.onDeleteNoteHandler = this.onDeleteNoteHandler.bind(this);
     }
 
@@ -37,12 +35,11 @@ class NoteApp extends React.Component {
 
     onDeleteNoteHandler(id) {
         const notes = this.state.notes.filter(note => note.id !== id);
-        console.log(notes);
         this.setState({ notes });
     }
 
     onArchiveNoteHandler(id) {
-        const noteToModify = this.state.pureNotes.filter(note => note.id === id)[0];
+        const noteToModify = this.state.notes.filter(note => note.id === id)[0];
         const modifiedNote = {
             ...noteToModify,
             archived: !noteToModify.archived
@@ -53,17 +50,11 @@ class NoteApp extends React.Component {
                     ...prevState.notes.filter(note => note.id !== id),
                     modifiedNote
                 ],
-                pureNotes: [
-                    ...prevState.pureNotes.filter(note => note.id !== id),
-                    modifiedNote
-                ]
             }
         });
     }
 
     render() {
-        console.log(this.state.notes);
-        console.log(this.state.pureNotes);
         return (
             <div className="note-app">
                 <header>
