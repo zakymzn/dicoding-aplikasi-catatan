@@ -9,10 +9,12 @@ class NoteApp extends React.Component {
         super(props);
         this.state = {
             notes: getInitialData(),
+            pureNotes: getInitialData(),
         }
 
         this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
         this.onArchiveNoteHandler = this.onArchiveNoteHandler.bind(this);
+        this.onSearchNoteHandler = this.onSearchNoteHandler.bind(this);
         this.onDeleteNoteHandler = this.onDeleteNoteHandler.bind(this);
     }
 
@@ -29,29 +31,61 @@ class NoteApp extends React.Component {
                         archived: false,
                     }
                 ],
+                pureNotes: [
+                    ...prevState.pureNotes,
+                    {
+                        id: +new Date(),
+                        title,
+                        body,
+                        createdAt: Date(),
+                        archived: false,
+                    }
+                ],
             }
         })
     }
 
     onDeleteNoteHandler(id) {
         const notes = this.state.notes.filter(note => note.id !== id);
-        this.setState({ notes });
+        const pureNotes = this.state.pureNotes.filter(note => note.id !== id);
+        this.setState({ notes, pureNotes });
     }
 
     onArchiveNoteHandler(id) {
         const noteToModify = this.state.notes.filter(note => note.id === id)[0];
+        const pureNoteToModify = this.state.pureNotes.filter(note => note.id === id)[0];
         const modifiedNote = {
             ...noteToModify,
             archived: !noteToModify.archived
         };
+        const modifiedPureNote = {
+            ...pureNoteToModify,
+            archived: !pureNoteToModify.archived
+        }
         this.setState((prevState) => {
             return {
                 notes: [
                     ...prevState.notes.filter(note => note.id !== id),
                     modifiedNote
                 ],
+                pureNotes: [
+                    ...prevState.pureNotes.filter(note => note.id !== id),
+                    modifiedPureNote
+                ]
             }
         });
+    }
+
+    onSearchNoteHandler(query) {
+        if (query.length !== 0 && query.trim() !== '') {
+            this.setState({
+                notes: this.state.pureNotes.filter(note => note.title.toLowerCase().includes(query.toLowerCase())),
+            });
+        } else {
+            this.setState({
+                notes: this.state.pureNotes,
+            })
+        }
     }
 
     render() {
@@ -59,7 +93,7 @@ class NoteApp extends React.Component {
             <div className="note-app">
                 <header>
                     <h1>Aplikasi Catatan</h1>
-                    <NavBar />
+                    <NavBar onSearch={this.onSearchNoteHandler} />
                 </header>
                 <main>
                     <h2 id="tambah-catatan">Tambah Catatan</h2>

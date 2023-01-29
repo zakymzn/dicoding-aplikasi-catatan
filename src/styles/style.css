@@ -10,7 +10,7 @@
 html {
     scroll-behavior: smooth;
     transition: all 500ms;
-    scroll-padding-top: 4em;
+    scroll-padding-top: 7em;
 }
 
 body {
@@ -73,6 +73,36 @@ nav a:hover {
     margin-left: 16px;
 }
 
+.search-note {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+}
+
+.search-note input {
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    background-color: darkslategrey;
+    color: white;
+    padding: 8px;
+    margin: 8px;
+}
+
+.search-note span {
+    color: white;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: darkslategrey;
+
+}
+
+.search-note input::placeholder {
+    color: lightslategrey;
+}
+
 .note-input {
     border: darkslategrey solid 3px;
     padding: 16px;
@@ -95,7 +125,7 @@ nav a:hover {
     padding: 5px;
     border-radius: 8px;
     background-color: darkslategrey;
-    border-color: transparent;
+    border: none;
     color: white;
 }
 
@@ -114,7 +144,7 @@ nav a:hover {
     padding: 5px;
     border-radius: 8px;
     background-color: darkslategrey;
-    border-color: transparent;
+    border: none;
     color: white;
 }
 
