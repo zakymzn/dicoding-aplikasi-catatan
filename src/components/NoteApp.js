@@ -22,24 +22,24 @@ class NoteApp extends React.Component {
         this.setState((prevState) => {
             return {
                 notes: [
-                    ...prevState.notes,
                     {
                         id: +new Date(),
                         title,
                         body,
                         createdAt: Date(),
                         archived: false,
-                    }
+                    },
+                    ...prevState.notes,
                 ],
                 pureNotes: [
-                    ...prevState.pureNotes,
                     {
                         id: +new Date(),
                         title,
                         body,
                         createdAt: Date(),
                         archived: false,
-                    }
+                    },
+                    ...prevState.pureNotes,
                 ],
             }
         })

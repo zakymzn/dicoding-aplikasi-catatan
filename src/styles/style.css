@@ -169,17 +169,23 @@ nav a:hover {
     background-color: darkslategrey;
 }
 
+.note-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .note-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: darkslategrey solid 3px;
     border-radius: 8px;
-    padding: 8px 16px;
+    padding: 16px 16px;
     margin: 16px;
 }
 
 .note-item__header {
-    display: flex;
     border-bottom: darkslategrey solid 3px;
-    justify-content: space-between;
     padding-bottom: 8px;
 }
 
@@ -262,5 +268,15 @@ nav a:hover {
 @media only screen and (max-width: 1028px) {
     main {
         width: 100%;
+    }
+
+    .note-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .note-list {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
