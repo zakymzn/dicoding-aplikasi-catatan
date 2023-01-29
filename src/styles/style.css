@@ -196,6 +196,23 @@ nav a:hover {
     background-color: yellow;
 }
 
+.note-item__unarchive {
+    color: limegreen;
+    background-color: transparent;
+    border: none;
+    border-radius: 100%;
+    padding: 8px 10px;
+    margin: 0 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 250ms;
+}
+
+.note-item__unarchive:hover {
+    color: white;
+    background-color: limegreen;
+}
+
 .empty-note span {
     display: flex;
     justify-content: center;
