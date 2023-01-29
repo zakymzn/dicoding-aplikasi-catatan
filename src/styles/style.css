@@ -265,6 +265,12 @@ nav a:hover {
     text-align: center;
 }
 
+footer {
+    font-size: small;
+    text-align: center;
+    padding: 100px 0 16px 0;
+}
+
 @media only screen and (max-width: 1028px) {
     main {
         width: 100%;

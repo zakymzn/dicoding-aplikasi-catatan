@@ -103,6 +103,9 @@ class NoteApp extends React.Component {
                     <h2 id="arsip-catatan">Arsip Catatan</h2>
                     <NoteList notes={this.state.notes.filter(note => note.archived === true)} onDelete={this.onDeleteNoteHandler} onArchive={this.onArchiveNoteHandler} />
                 </main>
+                <footer>
+                    &copy;Ma'mur Zaky Nurrokhman 2023
+                </footer>
             </div>
         );
     }
