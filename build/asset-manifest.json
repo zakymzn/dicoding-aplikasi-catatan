@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.754329d5.css",
-    "main.js": "/static/js/main.bd6a3246.js",
-    "index.html": "/index.html",
-    "main.754329d5.css.map": "/static/css/main.754329d5.css.map",
-    "main.bd6a3246.js.map": "/static/js/main.bd6a3246.js.map"
+    "main.css": "/dicoding-aplikasi-catatan/static/css/main.754329d5.css",
+    "main.js": "/dicoding-aplikasi-catatan/static/js/main.bd6a3246.js",
+    "index.html": "/dicoding-aplikasi-catatan/index.html",
+    "main.754329d5.css.map": "/dicoding-aplikasi-catatan/static/css/main.754329d5.css.map",
+    "main.bd6a3246.js.map": "/dicoding-aplikasi-catatan/static/js/main.bd6a3246.js.map"
   },
   "entrypoints": [
     "static/css/main.754329d5.css",
